@@ -9,7 +9,9 @@
 
 **Rodrigo Alvarez**
 
-909-643-4041 | <r.alvarezcobarruvias@gmail.com> | [linkedin.com/in/rodrigo-alvarez-722220123/](https://www.linkedin.com/in/rodrigo-alvarez-722220123/) | [github.com/grnpero](https://github.com/GrnPero)
+909-643-4041 | <r.alvarezcobarruvias@gmail.com>
+
+[linkedin.com/in/rodrigo-alvarez-722220123/](https://www.linkedin.com/in/rodrigo-alvarez-722220123/) | [github.com/grnpero](https://github.com/GrnPero)
 
 ## Technical Skills
 

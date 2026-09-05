@@ -141,7 +141,8 @@ conditional in `master.tex` — icons are presentation, so they never appear in
 `content/`. It pairs an icon command with each contact field:
 
 ```latex
-\faPhone\ #2 $|$ \faEnvelope\ #3 $|$ \faLinkedin\ #4 $|$ \faGithub\ #5
+\faPhone\ #2 $|$ \faEnvelope\ #3 \\
+\faLinkedin\ #4 $|$ \faGithub\ #5
 ```
 
 The trailing `\ ` after each icon is a real space; without it the glyph collides
