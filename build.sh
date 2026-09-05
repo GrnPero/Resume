@@ -28,10 +28,14 @@ for f in content/*.tex; do
     # copied out -- that keeps pdf/ free of .aux/.log/.fls clutter.
     # -usepretex is how the variant/format flags reach LaTeX; passing them as
     # part of the filename makes latexmk reject the argument.
-    latexmk -pdf -jobname="$job" -outdir=.build \
-            -interaction=nonstopmode -halt-on-error \
-            -usepretex="\\def\\variant{$name}\\def\\format{$fmt}" \
-            master.tex >/dev/null
+    if ! latexmk -pdf -jobname="$job" -outdir=.build \
+                 -interaction=nonstopmode -halt-on-error \
+                 -usepretex="\\def\\variant{$name}\\def\\format{$fmt}" \
+                 -silent master.tex >".build/$job.build.log" 2>&1; then
+      echo "error: LaTeX build failed for $job" >&2
+      cat ".build/$job.build.log" >&2
+      exit 1
+    fi
     cp ".build/$job.pdf" "pdf/$job.pdf"
   done
 done
