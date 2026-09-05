@@ -9,66 +9,66 @@
 
 **Rodrigo Alvarez**
 
-909-643-4041 | <r.alvarezcobarruvias@gmail.com>
+909-643-4041 \| <r.alvarezcobarruvias@gmail.com>
 
-[linkedin.com/in/rodrigo-alvarez-722220123/](https://www.linkedin.com/in/rodrigo-alvarez-722220123/) | [github.com/grnpero](https://github.com/GrnPero)
+[linkedin.com/in/rodrigo-alvarez-722220123/](https://www.linkedin.com/in/rodrigo-alvarez-722220123/) \| [github.com/grnpero](https://github.com/GrnPero)
 
 ## Technical Skills
 
-  - **Languages**: PHP, SQL, JavaScript, TypeScript, HTML, CSS
+- **Languages**: PHP, SQL, JavaScript, TypeScript, HTML, CSS
 
-  - **Databases**: MySQL, PostgreSQL, Redis
+- **Databases**: MySQL, PostgreSQL, Redis
 
-  - **Frameworks**: Laravel, Lumen, Livewire, Filament, Laravel Backpack, Tailwind, Bootstrap, Alpine.js, ReactJS, React Native, PHPUnit
+- **Frameworks**: Laravel, Lumen, Livewire, Filament, Laravel Backpack, Tailwind, Bootstrap, Alpine.js, ReactJS, React Native, PHPUnit
 
-  - **Developer Tools**: Git, GitHub, Docker, Postman, Claude Code, GitHub Copilot, Windows, Linux, VSCode, Jira, Gradle, Android Studio, Xcode, Yarn, MySQL Workbench, Vite, Vercel, Figma, Notion, Shortcut, Scrum, Storybook
+- **Developer Tools**: Git, GitHub, Docker, Postman, Claude Code, GitHub Copilot, Windows, Linux, VSCode, Jira, Gradle, Android Studio, Xcode, Yarn, MySQL Workbench, Vite, Vercel, Figma, Notion, Shortcut, Scrum, Storybook
 
-  - **Libraries**: D3, Passport (OAuth), Swagger (OpenAPI), Material UI, PrimeReact, OpenAI
+- **Libraries**: D3, Passport (OAuth), Swagger (OpenAPI), Material UI, PrimeReact, OpenAI
 
 ## Experience
 
 ### Full Stack Developer — JohnHart Real Estate
 
-*Glendora, CA | Dec. 2025 – Aug. 2026*
+*Glendora, CA \| Dec. 2025 – Aug. 2026*
 
-  - Developed and shipped full-stack features for a multi-tenant SaaS lending platform supporting loan origination, document management, and CRM workflows using Laravel, Livewire, JavaScript, and PostgreSQL
+- Developed and shipped full-stack features for a multi-tenant SaaS lending platform supporting loan origination, document management, and CRM workflows using Laravel, Livewire, JavaScript, and PostgreSQL
 
-  - Integrated third-party financial APIs and developed REST endpoints and outbound webhooks while following applicable security and compliance requirements
+- Integrated third-party financial APIs and developed REST endpoints and outbound webhooks while following applicable security and compliance requirements
 
-  - Leveraged Claude Code as part of an AI-assisted development workflow for prototyping, implementation, debugging, refactoring, and code review while validating generated code for correctness and maintainability
+- Leveraged Claude Code as part of an AI-assisted development workflow for prototyping, implementation, debugging, refactoring, and code review while validating generated code for correctness and maintainability
 
-  - Optimized database performance through strategic indexing, relational schema design, and efficient query development
+- Optimized database performance through strategic indexing, relational schema design, and efficient query development
 
-  - Worked within modern engineering practices including automated testing, pull request review, and CI/CD to deliver production features under active project deadlines
+- Worked within modern engineering practices including automated testing, pull request review, and CI/CD to deliver production features under active project deadlines
 
 ### Full Stack Developer — AxS Health
 
-*Redlands, CA | Aug. 2024 – Aug. 2025*
+*Redlands, CA \| Aug. 2024 – Aug. 2025*
 
-  - Shipped business-critical React Native (TypeScript) features for a surgical-staff mobile app with stability and UX gaps, with releases adopted straight into production and accelerating the product roadmap
+- Shipped business-critical React Native (TypeScript) features for a surgical-staff mobile app with stability and UX gaps, with releases adopted straight into production and accelerating the product roadmap
 
-  - Built a reusable UI component library in TypeScript and Storybook, integrating PrimeReact for complex components, giving the team a single source of truth and cutting duplicated UI code
+- Built a reusable UI component library in TypeScript and Storybook, integrating PrimeReact for complex components, giving the team a single source of truth and cutting duplicated UI code
 
-  - Partnered with the UI designer to translate Figma mockups into pixel-perfect interfaces
+- Partnered with the UI designer to translate Figma mockups into pixel-perfect interfaces
 
-  - Applied domain-driven design and service-layer patterns during a web and mobile rebuild, and drove code reviews and business-logic documentation with the senior developer for more maintainable, scalable code
+- Applied domain-driven design and service-layer patterns during a web and mobile rebuild, and drove code reviews and business-logic documentation with the senior developer for more maintainable, scalable code
 
 ### Web Developer — JohnHart Real Estate
 
-*Burbank, CA | Jan. 2022 – May 2023*
+*Burbank, CA \| Jan. 2022 – May 2023*
 
-  - Designed and shipped a documented, tested, and secure REST API in Laravel/Lumen to expose internal data to client applications, establishing a reliable integration layer
+- Designed and shipped a documented, tested, and secure REST API in Laravel/Lumen to expose internal data to client applications, establishing a reliable integration layer
 
-  - Implemented OAuth via Passport to secure API endpoints, ensuring only authorized clients could reach protected resources
+- Implemented OAuth via Passport to secure API endpoints, ensuring only authorized clients could reach protected resources
 
-  - Refactored coworkers’ endpoints to conform to REST standards, improving consistency and maintainability across the codebase
+- Refactored coworkers’ endpoints to conform to REST standards, improving consistency and maintainability across the codebase
 
-  - Optimized MySQL queries powering an internal feature for the Principal Software Engineer, reducing query overhead
+- Optimized MySQL queries powering an internal feature for the Principal Software Engineer, reducing query overhead
 
 ## Education
 
 ### California State University San Bernardino
 
-*San Bernardino, CA | Sept. 2015 – June 2020*
+*San Bernardino, CA \| Sept. 2015 – June 2020*
 
 Bachelor of Arts in Computer Systems, Minor in Music

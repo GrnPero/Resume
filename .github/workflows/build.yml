@@ -11,6 +11,7 @@ on:
       - markdown.tex
       - readme-header.md
       - build.sh
+      - .pandoc-version
   pull_request:
 
 jobs:
@@ -20,8 +21,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install pandoc
-        run: sudo apt-get update && sudo apt-get install -y pandoc
+      # Must be the version in .pandoc-version, not whatever the runner image
+      # ships: pandoc's gfm writer formats bullets and pipes differently across
+      # releases, so an unpinned pandoc fails the README check below on
+      # formatting alone. build.sh enforces the same pin locally.
+      - name: Install pinned pandoc
+        run: |
+          version=$(cat .pandoc-version)
+          curl -fL -o /tmp/pandoc.deb \
+            "https://github.com/jgm/pandoc/releases/download/${version}/pandoc-${version}-1-amd64.deb"
+          sudo dpkg -i /tmp/pandoc.deb
+          pandoc --version | head -1
 
       - name: Compile PDF
         uses: xu-cheng/latex-action@v3

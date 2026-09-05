@@ -7,6 +7,30 @@ cd "$(dirname "$0")"
 DEFAULT_VARIANT=fullstack
 mkdir -p pdf .build
 
+# pandoc's gfm writer changes its formatting between releases -- 2.x indents
+# bullets and leaves "|" literal, 3.x does neither. Either output is valid
+# Markdown, but CI byte-compares README.md against a fresh build, so a machine
+# on a different pandoc produces a README that CI rejects as stale even though
+# the content is identical. Pinning one version is what makes that check mean
+# "the sources changed" instead of "your pandoc differs". CI installs the same
+# version from .pandoc-version -- bump both together, never just one.
+PANDOC_VERSION=$(cat .pandoc-version)
+have=$(pandoc --version | head -1 | awk '{print $2}')
+if [[ $have != "$PANDOC_VERSION" ]]; then
+  cat >&2 <<EOF
+error: pandoc $have found, but this repo pins $PANDOC_VERSION (.pandoc-version)
+
+Generating README.md with a different pandoc produces cosmetic diffs that CI
+reports as a stale README. Install the pinned version:
+
+  curl -fL -o /tmp/pandoc.deb https://github.com/jgm/pandoc/releases/download/$PANDOC_VERSION/pandoc-$PANDOC_VERSION-1-amd64.deb
+  sudo dpkg -i /tmp/pandoc.deb
+
+See "Why pandoc is pinned" in MAINTAINING.md.
+EOF
+  exit 1
+fi
+
 # The print format needs fontawesome5 (texlive-fonts-extra). Skip those builds
 # rather than failing if it is missing, so commits still work without it.
 FORMATS=(online)

@@ -6,7 +6,9 @@
 # Activate with:  git config core.hooksPath hooks
 set -euo pipefail
 
-if git diff --cached --name-only | grep -qE '^(content/|master\.tex|markdown\.tex|readme-header\.md)'; then
+# .pandoc-version and build.sh are in here because bumping the pandoc pin
+# rewrites README.md's formatting just as surely as editing the content does.
+if git diff --cached --name-only | grep -qE '^(content/|master\.tex|markdown\.tex|readme-header\.md|build\.sh|\.pandoc-version)'; then
     ./build.sh
     git add README.md pdf/    # ignored files (pdf/local-*) are skipped
 fi

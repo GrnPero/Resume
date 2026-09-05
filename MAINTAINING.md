@@ -12,6 +12,7 @@ content/
 master.tex             PDF wrapper: preamble + macros that produce a PDF
 markdown.tex           Markdown wrapper: same macros, Markdown-shaped
 build.sh               regenerates everything
+.pandoc-version        the pandoc release build.sh and CI must both use
 readme-header.md       the intro block prepended to README.md
 hooks/pre-commit       runs build.sh and stages the results
 pdf/                   generated PDFs
@@ -118,12 +119,21 @@ Writes `pdf/*.pdf` and regenerates `README.md`. Intermediate LaTeX files go to
 ## First-time setup on a new clone
 
 ```bash
-sudo apt-get install pandoc latexmk \
+sudo apt-get install latexmk \
   texlive-latex-base texlive-latex-recommended texlive-latex-extra \
   texlive-fonts-recommended texlive-fonts-extra
 
+# pandoc comes from a pinned release, not apt -- see "Why pandoc is pinned"
+version=$(cat .pandoc-version)
+curl -fL -o /tmp/pandoc.deb \
+  "https://github.com/jgm/pandoc/releases/download/${version}/pandoc-${version}-1-amd64.deb"
+sudo dpkg -i /tmp/pandoc.deb
+
 git config core.hooksPath hooks
 ```
+
+Do not `apt-get install pandoc`. Distro pandoc is whatever that release froze,
+which is how the versions drift apart in the first place.
 
 `texlive-fonts-extra` is the large one (~1–2 GB) and supplies `fontawesome5`.
 Skip it and everything still works apart from the print PDFs — `build.sh` warns
@@ -133,6 +143,39 @@ The `git config` line is required because git deliberately does not let a repo
 configure its own `hooksPath`; a repo that could silently run scripts on clone
 would be a security hole. There is no way around it in plain git, so it is a
 one-time manual step per clone.
+
+## Why pandoc is pinned
+
+`.pandoc-version` holds one version string. `build.sh` refuses to run unless the
+local `pandoc --version` matches it, and CI installs that exact release instead
+of the runner image's.
+
+This exists because pandoc's `gfm` writer changes its formatting between major
+releases. Pandoc 2.x indents list bullets two spaces and leaves `|` literal;
+3.x un-indents them and escapes it as `\|`. Both are valid Markdown that GitHub
+renders identically, so nothing *looks* wrong — but CI byte-compares the
+committed `README.md` against a fresh build, so a machine on a different pandoc
+generates a README that CI rejects as stale even when no content changed. The
+diff is pages of `-` vs `\|` noise with no real edit in it, and `./build.sh`
+does not fix it, because rebuilding on the same wrong pandoc reproduces the same
+output.
+
+Pinning turns that failure into a local one with a name. The version check runs
+before any LaTeX, so a mismatched clone fails in a second with install
+instructions rather than after a full PDF build.
+
+### Bumping the version
+
+```bash
+echo 3.12 > .pandoc-version   # then install that release locally
+./build.sh                    # regenerates README.md in the new format
+```
+
+Commit `.pandoc-version` and the regenerated `README.md` together. CI reads the
+file, so it follows automatically — but every other clone will fail its next
+build until it installs the same release, which is the intended trade: an
+obvious error beats a silent formatting drift. Expect the bump commit to carry a
+large cosmetic README diff whenever the major version changes.
 
 ## Customizing print icons
 
@@ -181,3 +224,9 @@ git add README.md pdf/
 git commit --amend --no-edit
 git push --force-with-lease
 ```
+
+If that rebuild changes nothing and CI still fails, read the diff: bullet
+indentation and `\|` escaping shifting across every line means a pandoc version
+mismatch rather than stale content — see "Why pandoc is pinned". `build.sh`
+catches that up front now, so it should only reach CI from a clone that bypassed
+the hook.
