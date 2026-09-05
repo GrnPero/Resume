@@ -1,3 +1,11 @@
+# LaTeX build directory (aux, log, fls, and intermediate PDFs)
+.build/
+
+# Private one-off variants tailored to a single employer -- see MAINTAINING.md
+content/local-*.tex
+pdf/local-*.pdf
+
+# Stray LaTeX artifacts, in case anything is ever built outside .build/
 *.aux
 *.log
 *.out

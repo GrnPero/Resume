@@ -1,16 +1,20 @@
-name: Build resume
+name: Verify resume
 
+# Inspects only -- this workflow never commits or pushes. Generation happens
+# locally via hooks/pre-commit, which is what keeps main free of bot commits.
 on:
   push:
     branches: [main]
     paths:
+      - content/**
       - master.tex
-
-permissions:
-  contents: write
+      - markdown.tex
+      - readme-header.md
+      - build.sh
+  pull_request:
 
 jobs:
-  build:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,14 +27,17 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: master.tex
+          latexmk_use_lualatex: false
+          args: -pdf -interaction=nonstopmode -halt-on-error
 
-      - name: Generate Markdown
-        run: pandoc master.tex -o master.md
-
-      - name: Commit generated files
+      - name: Check README is up to date
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add master.md master.pdf
-          git diff --staged --quiet || git commit -m "chore: regenerate master.md and master.pdf [skip ci]"
-          git push
+          cp readme-header.md README.expected.md
+          pandoc markdown.tex -t gfm --wrap=none --shift-heading-level-by=1 \
+            >> README.expected.md
+          if ! diff -q README.md README.expected.md >/dev/null; then
+            echo "::error::README.md is stale. Run ./build.sh and amend your commit."
+            diff README.md README.expected.md || true
+            exit 1
+          fi
+          rm README.expected.md

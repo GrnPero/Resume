@@ -1,0 +1,34 @@
+% Markdown target. This file is NEVER compiled to a PDF -- it exists only so
+% pandoc can read the shared content in content/ with macros that expand to
+% constructs Markdown can represent.
+%
+% The PDF wrapper (master.tex) renders headers and job entries with two-column
+% tabular* layouts, which have no Markdown equivalent -- pandoc turns them into
+% broken pseudo-tables. Defining the same macros semantically here is what
+% produces clean output instead.
+\documentclass{article}
+\usepackage{hyperref}
+
+\providecommand{\variant}{fullstack}
+
+% Plain "|" is deliberate: it passes through pandoc as a literal pipe, while
+% $|$ becomes \(|\) and \textbar{} is dropped entirely.
+\newcommand{\resumeLink}[2]{\href{#1}{#2}}
+\newcommand{\resumeHeader}[5]{\textbf{#1}\par #2 | #3 | #4 | #5\par}
+
+\newcommand{\resumeSkillListStart}{\begin{itemize}}
+\newcommand{\resumeSkill}[2]{\item \textbf{#1}: #2}
+\newcommand{\resumeSkillListEnd}{\end{itemize}}
+
+\newcommand{\resumeSubheading}[4]{\subsection{#1 --- #3}\textit{#4 | #2}\par}
+\newcommand{\resumeEducation}[4]{\subsection{#1}\textit{#2 | #4}\par #3\par}
+
+\newcommand{\resumeItem}[1]{\item #1}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+\newcommand{\resumeSubHeadingListStart}{}
+\newcommand{\resumeSubHeadingListEnd}{}
+
+\begin{document}
+\input{content/\variant.tex}
+\end{document}

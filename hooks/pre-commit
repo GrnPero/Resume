@@ -1,0 +1,12 @@
+#!/bin/bash
+# Regenerates the PDFs and README.md when resume sources change, and stages
+# them into the commit being made -- so generated files are never stale and
+# there is no CI bot commit to pull afterwards.
+#
+# Activate with:  git config core.hooksPath hooks
+set -euo pipefail
+
+if git diff --cached --name-only | grep -qE '^(content/|master\.tex|markdown\.tex|readme-header\.md)'; then
+    ./build.sh
+    git add README.md pdf/    # ignored files (pdf/local-*) are skipped
+fi
