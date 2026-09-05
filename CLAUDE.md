@@ -29,6 +29,13 @@ git commit -m "Add print format with icon header" -m "- Load fontawesome5 only i
 
 Rules for the commit command:
 
+- **Cover every uncommitted change in the working tree, not just the work done
+  since the last commit command you printed.** Check `git status` and
+  `git diff HEAD` before writing it. A command printed earlier in the
+  conversation was never run — if more work happened after it, the next command
+  supersedes it and must describe the whole diff against `HEAD`. Printing a
+  command that covers only the latest slice silently drops the earlier work from
+  the commit message.
 - Summary line: imperative mood, no trailing period (`Add X`, not `Added X.`).
 - Each `-m` bullet starts with `- ` and states one concrete change.
 - Keep it on a single line so it pastes into a terminal in one go.

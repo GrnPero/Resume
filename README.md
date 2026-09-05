@@ -13,17 +13,21 @@
 
 [linkedin.com/in/rodrigo-alvarez-722220123/](https://www.linkedin.com/in/rodrigo-alvarez-722220123/) \| [github.com/grnpero](https://github.com/GrnPero)
 
+## Summary
+
+Full-stack developer who owns features end to end — Laravel and PostgreSQL through React and React Native — shipping production software for lending, healthcare, and real estate teams, with Claude Code and agentic workflows built into how I ship.
+
 ## Technical Skills
 
 - **Languages**: PHP, SQL, JavaScript, TypeScript, HTML, CSS
 
 - **Databases**: MySQL, PostgreSQL, Redis
 
-- **Frameworks**: Laravel, Lumen, Livewire, Filament, Laravel Backpack, Tailwind, Bootstrap, Alpine.js, ReactJS, React Native, PHPUnit
+- **Frameworks**: Laravel, Lumen, Livewire, Filament, React, React Native, Tailwind, Alpine.js, PHPUnit
 
-- **Developer Tools**: Git, GitHub, Docker, Postman, Claude Code, GitHub Copilot, Windows, Linux, VSCode, Jira, Gradle, Android Studio, Xcode, Yarn, MySQL Workbench, Vite, Vercel, Figma, Notion, Shortcut, Scrum, Storybook
+- **AI Tools**: Claude Code, GitHub Copilot, OpenAI API
 
-- **Libraries**: D3, Passport (OAuth), Swagger (OpenAPI), Material UI, PrimeReact, OpenAI
+- **Developer Tools**: Docker, Postman, Vite, Vercel, Storybook, Figma, Android Studio, Xcode
 
 ## Experience
 
@@ -31,39 +35,33 @@
 
 *Glendora, CA \| Dec. 2025 – Aug. 2026*
 
-- Developed and shipped full-stack features for a multi-tenant SaaS lending platform supporting loan origination, document management, and CRM workflows using Laravel, Livewire, JavaScript, and PostgreSQL
+- **Lending Platform** — Built and shipped full-stack features for a multi-tenant SaaS lending platform covering loan origination and CRM workflows in Laravel, Livewire, and PostgreSQL
 
-- Integrated third-party financial APIs and developed REST endpoints and outbound webhooks while following applicable security and compliance requirements
+- **API Integrations** — Integrated third-party financial APIs and built the REST endpoints and outbound webhooks around them, meeting the security and compliance requirements that lending data carries
 
-- Leveraged Claude Code as part of an AI-assisted development workflow for prototyping, implementation, debugging, refactoring, and code review while validating generated code for correctness and maintainability
+- **Agentic Coding** — Used Claude Code across prototyping, implementation, debugging, and refactoring, validating every generated change through automated tests, pull request review, and CI/CD before it reached production
 
-- Optimized database performance through strategic indexing, relational schema design, and efficient query development
-
-- Worked within modern engineering practices including automated testing, pull request review, and CI/CD to deliver production features under active project deadlines
+- **Database Optimization** — Tuned PostgreSQL performance through strategic indexing, relational schema design, and efficient query development
 
 ### Full Stack Developer — AxS Health
 
 *Redlands, CA \| Aug. 2024 – Aug. 2025*
 
-- Shipped business-critical React Native (TypeScript) features for a surgical-staff mobile app with stability and UX gaps, with releases adopted straight into production and accelerating the product roadmap
+- **Surgical Staff Mobile App** — Shipped business-critical React Native and TypeScript features into an app with real stability and UX gaps, with releases adopted straight into production and accelerating the product roadmap
 
-- Built a reusable UI component library in TypeScript and Storybook, integrating PrimeReact for complex components, giving the team a single source of truth and cutting duplicated UI code
+- **Reusable UI Library** — Built a TypeScript and Storybook component library with PrimeReact for complex components, partnering with the UI designer to give the team one source of truth and cut duplicated UI code
 
-- Partnered with the UI designer to translate Figma mockups into pixel-perfect interfaces
-
-- Applied domain-driven design and service-layer patterns during a web and mobile rebuild, and drove code reviews and business-logic documentation with the senior developer for more maintainable, scalable code
+- **Rebuild Architecture** — Applied domain-driven design and service-layer patterns during a web and mobile rebuild
 
 ### Web Developer — JohnHart Real Estate
 
 *Burbank, CA \| Jan. 2022 – May 2023*
 
-- Designed and shipped a documented, tested, and secure REST API in Laravel/Lumen to expose internal data to client applications, establishing a reliable integration layer
+- **API Development** — Designed and shipped a documented, tested REST API in Laravel and Lumen to expose internal data to client applications, securing it with OAuth via Passport so only authorized clients reached protected resources
 
-- Implemented OAuth via Passport to secure API endpoints, ensuring only authorized clients could reach protected resources
+- **Refactored Endpoints** — Reworked coworkers’ endpoints to conform to REST conventions, improving consistency and maintainability across the codebase
 
-- Refactored coworkers’ endpoints to conform to REST standards, improving consistency and maintainability across the codebase
-
-- Optimized MySQL queries powering an internal feature for the Principal Software Engineer, reducing query overhead
+- **Query Optimization** — Optimized MySQL queries powering an internal feature for the Principal Software Engineer, reducing query overhead
 
 ## Education
 

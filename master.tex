@@ -54,8 +54,8 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{-2pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-2pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
@@ -81,16 +81,25 @@
 % Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{-2pt}}
+    {#1}
   }
 }
 
+% A bullet that opens with a bolded lead-in, so the eye can catch what the
+% bullet is about before reading it. Wraps \resumeItem rather than repeating
+% its body, so the two never drift apart.
+\newcommand{\resumeItemLead}[2]{\resumeItem{\textbf{#1} --- #2}}
+
+% One-sentence pitch under the Summary heading. \small matches the body -- the
+% document default is 11pt, which would render larger than every bullet below.
+\newcommand{\resumeSummary}[1]{{\small #1}\par\vspace{2pt}}
+
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
+  \vspace{2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-4pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
@@ -113,8 +122,12 @@
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+% Spacing knobs. These four values are the slack the one-page layout runs on:
+% raise them for more air, lower them to absorb added content. Bumping the
+% section/subheading gaps by ~4pt each is roughly what tips this onto a second
+% page, so change them one step at a time and check `pdfinfo pdf/*.pdf`.
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=2pt, topsep=2pt, parsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
 
 % Education reuses the two-column subheading layout, but takes its arguments
 % in school/location/degree/dates order.
@@ -144,8 +157,8 @@
   \newcommand{\resumeLink}[2]{#2}
   \newcommand{\resumeHeader}[5]{
     \begin{center}
-      \textbf{\Huge \scshape #1} \\ \vspace{2pt}
-      \small \faPhone\ #2 $|$ \faEnvelope\ #3 \\ \vspace{2pt}
+      \textbf{\Huge \scshape #1} \\ \vspace{6pt}
+      \small \faPhone\ #2 $|$ \faEnvelope\ #3 \\ \vspace{4pt}
       \small \faLinkedin\ #4 $|$ \faGithub\ #5
     \end{center}
   }
@@ -156,8 +169,8 @@
   \newcommand{\resumeLink}[2]{\href{#1}{\underline{#2}}}
   \newcommand{\resumeHeader}[5]{
     \begin{center}
-      \textbf{\Huge \scshape #1} \\ \vspace{1pt}
-      \small #2 $|$ #3 \\ \vspace{1pt}
+      \textbf{\Huge \scshape #1} \\ \vspace{6pt}
+      \small #2 $|$ #3 \\ \vspace{4pt}
       \small #4 $|$ #5
     \end{center}
   }
