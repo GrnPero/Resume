@@ -15,7 +15,7 @@
 
 ## Summary
 
-Full-stack developer who owns features end to end — Laravel and PostgreSQL through React and React Native — shipping production software for lending, healthcare, and real estate teams, with Claude Code and agentic workflows built into how I ship.
+Full-stack developer shipping production software for lending, healthcare, and real estate teams, from Laravel/PostgreSQL to React, who has adopted AI tools like Claude Code into my workflow.
 
 ## Technical Skills
 
@@ -23,7 +23,7 @@ Full-stack developer who owns features end to end — Laravel and PostgreSQL thr
 
 - **Databases**: MySQL, PostgreSQL, Redis
 
-- **Frameworks**: Laravel, Lumen, Livewire, Filament, React, React Native, Tailwind, Alpine.js, PHPUnit
+- **Frameworks**: Laravel, Lumen, Livewire, Filament, React, Tailwind, Alpine.js, PHPUnit
 
 - **AI Tools**: Claude Code, GitHub Copilot, OpenAI API
 
@@ -35,21 +35,21 @@ Full-stack developer who owns features end to end — Laravel and PostgreSQL thr
 
 *Glendora, CA \| Dec. 2025 – Aug. 2026*
 
-- **Lending Platform** — Built and shipped full-stack features for a multi-tenant SaaS lending platform covering loan origination and CRM workflows in Laravel, Livewire, and PostgreSQL
+- **Lending Platform** — Shipped loan origination and CRM workflows for a compliant multi-tenant SaaS platform
 
-- **API Integrations** — Integrated third-party financial APIs and built the REST endpoints and outbound webhooks around them, meeting the security and compliance requirements that lending data carries
+- **API Integrations** — Built REST endpoints and webhooks, leveraging third-party financial APIs in the web app
 
-- **Agentic Coding** — Used Claude Code across prototyping, implementation, debugging, and refactoring, validating every generated change through automated tests, pull request review, and CI/CD before it reached production
+- **Agentic Coding** — Used Claude Code daily, validating every generated change through automated tests and CI/CD
 
-- **Database Optimization** — Tuned PostgreSQL performance through strategic indexing, relational schema design, and efficient query development
+- **Database Optimization** — Cut query overhead through strategic indexing, relational schema design, and tuning
 
 ### Full Stack Developer — AxS Health
 
 *Redlands, CA \| Aug. 2024 – Aug. 2025*
 
-- **Surgical Staff Mobile App** — Shipped business-critical React Native and TypeScript features into an app with real stability and UX gaps, with releases adopted straight into production and accelerating the product roadmap
+- **Surgical Staff Mobile App** — Shipped business-critical features into production, accelerating the roadmap
 
-- **Reusable UI Library** — Built a TypeScript and Storybook component library with PrimeReact for complex components, partnering with the UI designer to give the team one source of truth and cut duplicated UI code
+- **Reusable UI Library** — Partnered with the UI designer on a component library that cut duplicated UI code
 
 - **Rebuild Architecture** — Applied domain-driven design and service-layer patterns during a web and mobile rebuild
 
@@ -57,11 +57,11 @@ Full-stack developer who owns features end to end — Laravel and PostgreSQL thr
 
 *Burbank, CA \| Jan. 2022 – May 2023*
 
-- **API Development** — Designed and shipped a documented, tested REST API in Laravel and Lumen to expose internal data to client applications, securing it with OAuth via Passport so only authorized clients reached protected resources
+- **API Development** — Designed a documented, tested REST API exposing internal data, secured with OAuth
 
-- **Refactored Endpoints** — Reworked coworkers’ endpoints to conform to REST conventions, improving consistency and maintainability across the codebase
+- **Refactored Endpoints** — Reworked coworkers’ endpoints to REST conventions, improving codebase consistency
 
-- **Query Optimization** — Optimized MySQL queries powering an internal feature for the Principal Software Engineer, reducing query overhead
+- **Query Optimization** — Optimized queries powering an internal feature for the Principal Software Engineer
 
 ## Education
 

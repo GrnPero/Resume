@@ -122,11 +122,14 @@
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-% Spacing knobs. These four values are the slack the one-page layout runs on:
-% raise them for more air, lower them to absorb added content. Bumping the
+% Spacing knobs. These values are the slack the one-page layout runs on: raise
+% them for more air, lower them to absorb added content. Bumping the
 % section/subheading gaps by ~4pt each is roughly what tips this onto a second
 % page, so change them one step at a time and check `pdfinfo pdf/*.pdf`.
-\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=2pt, topsep=2pt, parsep=0pt]}
+%
+% leftmargin on the item list is a width knob, not a vertical one. Bullet bodies
+% are written to fit on a single line at this indent, so widening it wraps them.
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, itemsep=2pt, topsep=2pt, parsep=0pt]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
 
 % Education reuses the two-column subheading layout, but takes its arguments
