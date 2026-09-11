@@ -109,11 +109,16 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+% Single-row heading for a project entry. The vspace pair matches
+% \resumeSubheading above on purpose -- a project's bullet list needs the same
+% breathing room under its title as a job's does, and the -7pt this used to
+% carry pulled the first bullet up against the heading and out of alignment
+% with the rest of the list.
 \newcommand{\resumeProjectHeading}[2]{
-    \item
+    \vspace{5pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-5pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
