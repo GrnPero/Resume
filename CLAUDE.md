@@ -42,3 +42,13 @@ Rules for the commit command:
 - **Never include a `Co-Authored-By` trailer or any mention of Claude, AI
   assistance, or generated-with attribution.** These commits are authored by
   the repo owner.
+
+## Cover letters
+
+Always end a cover letter with:
+
+```
+Thank you for your time.
+
+Rodrigo Alvarez
+```
