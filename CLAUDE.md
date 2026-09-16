@@ -45,6 +45,11 @@ Rules for the commit command:
 
 ## Cover letters
 
+**Every tailored resume gets a cover letter.** Whenever a variant is created or
+updated for a specific company, write the matching cover letter for that company
+in the same turn, without being asked again. Paste it in chat rather than saving
+it to a file.
+
 Always end a cover letter with:
 
 ```
