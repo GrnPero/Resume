@@ -200,6 +200,17 @@ content: add the argument in `content/_header.tex`, then bump the argument count
 and render it in **both** header definitions in `master.tex` **and** in
 `markdown.tex`. All three must agree on the argument count or the build errors.
 
+### A header without LinkedIn or GitHub
+
+`\resumeHeaderSimple` takes name, location, phone, email and renders them on one
+line. It exists because `\resumeHeader` binds its icons to argument position —
+field 4 always gets `\faLinkedin`, field 5 always `\faGithub` — so a resume for
+someone without those accounts cannot reuse it without printing a GitHub logo
+beside an email address.
+
+Like `\resumeHeader`, it is defined three times and all three must stay in sync:
+the `print` and `online` branches in `master.tex`, and once in `markdown.tex`.
+
 If icons render as blank boxes rather than logos, the package resolved but the
 font did not — check `.build/*.log` for missing-glyph warnings before assuming
 the icon name is wrong.

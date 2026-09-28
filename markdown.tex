@@ -15,6 +15,7 @@
 % $|$ becomes \(|\) and \textbar{} is dropped entirely.
 \newcommand{\resumeLink}[2]{\href{#1}{#2}}
 \newcommand{\resumeHeader}[5]{\textbf{#1}\par #2 | #3\par #4 | #5\par}
+\newcommand{\resumeHeaderSimple}[4]{\textbf{#1}\par #2 | #3 | #4\par}
 
 \newcommand{\resumeSkillListStart}{\begin{itemize}}
 \newcommand{\resumeSkill}[2]{\item \textbf{#1}: #2}
@@ -30,6 +31,11 @@
 \newcommand{\resumeItemListEnd}{\end{itemize}}
 \newcommand{\resumeSubHeadingListStart}{}
 \newcommand{\resumeSubHeadingListEnd}{}
+
+% Vertical spacing has no meaning in Markdown, so the compact-layout opt-in is
+% a no-op here. It still has to exist: a variant that calls it must render in
+% both targets.
+\newcommand{\resumeCompact}{}
 
 \begin{document}
 \input{content/\variant.tex}

@@ -95,7 +95,7 @@
 \newcommand{\resumeSummary}[1]{{\small #1}\par\vspace{2pt}}
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{7pt}\item
+  \vspace{\resumeSubheadSkip}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
@@ -134,8 +134,32 @@
 %
 % leftmargin on the item list is a width knob, not a vertical one. Bullet bodies
 % are written to fit on a single line at this indent, so widening it wraps them.
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, itemsep=4pt, topsep=2pt, parsep=0pt]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{3pt}}
+%
+% The four vertical values are macros rather than literals so \resumeCompact
+% below can lower them for one variant without touching any other.
+\newcommand{\resumeItemSep}{4pt}
+\newcommand{\resumeItemTopSep}{2pt}
+\newcommand{\resumeListEndSkip}{3pt}
+\newcommand{\resumeSubheadSkip}{7pt}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, itemsep=\resumeItemSep, topsep=\resumeItemTopSep, parsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{\resumeListEndSkip}}
+
+% Denser spacing for a variant carrying more sections than one page comfortably
+% holds -- a content file opts in by calling \resumeCompact before its first
+% section. Nothing changes unless a variant asks for it, so the default layout
+% and every variant built on it render exactly as before.
+%
+% This is the alternative to cutting content off a resume that is already lean,
+% and it is deliberately per-variant: the defaults above are the slack the
+% default one-page layout runs on, so lowering them globally would reflow every
+% other variant to buy space for one.
+\newcommand{\resumeCompact}{%
+  \renewcommand{\resumeItemSep}{2pt}%
+  \renewcommand{\resumeItemTopSep}{1pt}%
+  \renewcommand{\resumeListEndSkip}{1pt}%
+  \renewcommand{\resumeSubheadSkip}{5pt}%
+}
 
 % Education reuses the two-column subheading layout, but takes its arguments
 % in school/location/degree/dates order.
@@ -159,6 +183,13 @@
 
 %-------------------------
 % Contact header -- the only thing that differs between print and online.
+%
+% Two variants. \resumeHeader takes five fields ending in LinkedIn and GitHub.
+% \resumeHeaderSimple is for a resume with neither: name, location, phone,
+% email on one line. Reusing the five-field version for those would stamp a
+% GitHub logo beside an email address in the print build, since the icons there
+% are bound to argument position. Both must stay in sync across the two
+% branches below and markdown.tex -- see MAINTAINING.md.
 \ifx\format\resumeformatprint
   % PRINT: icon glyphs. Nothing is clickable on paper, so labels are dropped
   % in favour of logos. The trailing "\ " after each icon is a real space.
@@ -168,6 +199,12 @@
       \textbf{\Huge \scshape #1} \\ \vspace{6pt}
       \small \faPhone\ #2 $|$ \faEnvelope\ #3 \\ \vspace{4pt}
       \small \faLinkedin\ #4 $|$ \faGithub\ #5
+    \end{center}
+  }
+  \newcommand{\resumeHeaderSimple}[4]{
+    \begin{center}
+      \textbf{\Huge \scshape #1} \\ \vspace{6pt}
+      \small \faMapMarker\ #2 $|$ \faPhone\ #3 $|$ \faEnvelope\ #4
     \end{center}
   }
 \else
@@ -180,6 +217,12 @@
       \textbf{\Huge \scshape #1} \\ \vspace{6pt}
       \small #2 $|$ #3 \\ \vspace{4pt}
       \small #4 $|$ #5
+    \end{center}
+  }
+  \newcommand{\resumeHeaderSimple}[4]{
+    \begin{center}
+      \textbf{\Huge \scshape #1} \\ \vspace{6pt}
+      \small #2 $|$ #3 $|$ #4
     \end{center}
   }
 \fi
