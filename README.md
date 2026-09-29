@@ -51,7 +51,7 @@ Full-stack developer shipping production software for lending, healthcare, and r
 
 - **Reusable UI Library** — Partnered with the UI designer on a component library that cut duplicated UI code
 
-- **Rebuild Architecture** — Applied domain-driven design and service-layer patterns during a web and mobile rebuild
+- **Admin Panel Migration** — Ported services and core admin features from Filament to React, following DDD
 
 ### Web Developer — JohnHart Real Estate
 
