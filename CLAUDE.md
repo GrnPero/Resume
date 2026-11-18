@@ -39,9 +39,8 @@ Rules for the commit command:
 - Summary line: imperative mood, no trailing period (`Add X`, not `Added X.`).
 - Each `-m` bullet starts with `- ` and states one concrete change.
 - Keep it on a single line so it pastes into a terminal in one go.
-- **Never include a `Co-Authored-By` trailer or any mention of Claude, AI
-  assistance, or generated-with attribution.** These commits are authored by
-  the repo owner.
+- Describe the change only. Leave out tool attribution such as
+  `Co-Authored-By` trailers or "Generated with" footers.
 
 ## Cover letters
 
