@@ -1,0 +1,55 @@
+% Tracked variant: general Python-forward backend resume.
+%
+% This is a CONTENT file -- it says what the resume contains, never how it
+% looks. Same skills shape as fullstack.tex, with Python and FastAPI added and
+% the Python bullets (Test Data Tooling, Metrics Dashboard) on the page.
+
+\input{content/_header.tex}
+
+\section{Summary}
+\resumeSummary{Full-stack developer shipping production software for lending, healthcare, and real estate teams, across Laravel/PostgreSQL and Python, with a focus on REST APIs, SQL query performance, and production support.}
+
+\section{Technical Skills}
+\resumeSkillListStart
+  \resumeSkill{Languages}{PHP, Python, SQL, JavaScript, TypeScript, HTML, CSS}
+  \resumeSkill{Databases}{MySQL, PostgreSQL, Redis}
+  \resumeSkill{Frameworks}{Laravel, FastAPI, Lumen, Livewire, Filament, React, Tailwind, Alpine.js, PHPUnit}
+  \resumeSkill{AI Tools}{Claude Code, GitHub Copilot, OpenAI API}
+  \resumeSkill{Developer Tools}{Docker, Postman, Vite, Vercel, Storybook, Figma, Android Studio, Xcode}
+\resumeSkillListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Full Stack Developer}{Dec. 2025 -- Aug. 2026}
+    {JohnHart Real Estate}{Glendora, CA}
+    \resumeItemListStart
+      \resumeItemLead{Lending Platform}{Shipped loan origination and CRM workflows for a compliant multi-tenant SaaS platform}
+      \resumeItemLead{API Integrations}{Built REST endpoints and webhooks, leveraging third-party financial APIs in the web app}
+      \resumeItemLead{Production Debugging}{Reproduced production bugs from database dumps and Laravel logs, then pushed fixes}
+      \resumeItemLead{Test Data Tooling}{Wrote Python tooling generating synthetic PDF scan fixtures for testing}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Full Stack Developer}{Aug. 2024 -- Aug. 2025}
+    {AxS Health}{Redlands, CA}
+    \resumeItemListStart
+      \resumeItemLead{Metrics Dashboard}{Prototyped a FastAPI and Chart.js reporting dashboard on my own initiative}
+      \resumeItemLead{Admin Panel Migration}{Ported services and core admin features from Filament to React, following DDD}
+      \resumeItemLead{Staff Scoring}{Refactored the dashboard's staff scoring, adding features to clear or reassign delays}
+      \resumeItemLead{Surgical Staff Mobile App}{Shipped business-critical React Native features into production}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Web Developer}{Jan. 2022 -- May 2023}
+    {JohnHart Real Estate}{Burbank, CA}
+    \resumeItemListStart
+      \resumeItemLead{API Development}{Designed a documented, tested REST API exposing internal data, secured with OAuth}
+      \resumeItemLead{Refactored Endpoints}{Reworked coworkers' endpoints to REST conventions, improving codebase consistency}
+      \resumeItemLead{Query Optimization}{Optimized queries powering an internal feature for the Principal Software Engineer}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\input{content/_education.tex}
